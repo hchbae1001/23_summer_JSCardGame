@@ -14,13 +14,6 @@
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
 
     <style>
-        /* .game {
-            width: 540px;
-            height: 140px;
-            border: 1px solid;
-            padding: 10px;
-            display: inline-block;
-        } */
         .game {
             width: 540px;
             height: 140px;
@@ -143,30 +136,32 @@
     다 끝나면 게임종료<br>
     Computer Side
     -->
-    <div id="computer">
+    User Side
+    <div id="user">
         <!--ㅏ-->
-        <div class="game comBoard" style="height: 240px;">ㅏ
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
+        <div class="game userBoard" style="height: 240px;">ㅏ
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
         </div>
         <!--ㅗ-->
-        <div class="game comBoard" style="height: 240px;">ㅗ
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
+        <div class="game userBoard" style="height: 240px;">ㅗ
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
         </div>
     </div>
+    
     <br>
     <div id="lifeStatus"> User Life = <span class="count">2</span></div>
     <div id="userScore"> User Score = <span class="count">0</span></div>
@@ -296,29 +291,28 @@
             </td>
         </tr>
     </table>
-    User Side
-    <div id="user">
+    <div id="computer">
         <!--ㅏ-->
-        <div class="game userBoard" style="height: 240px;">ㅏ
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
+        <div class="game comBoard" style="height: 240px;">ㅏ
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
         </div>
         <!--ㅗ-->
-        <div class="game userBoard" style="height: 240px;">ㅗ
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
+        <div class="game comBoard" style="height: 240px;">ㅗ
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
         </div>
     </div>
     <button id="men">Show Tooltips</button>

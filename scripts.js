@@ -662,3 +662,4 @@ function droppedCardBlock() { //턴을 종료할때, drop된 카드를 클릭하
         });
     }
 }
+

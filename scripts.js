@@ -536,3 +536,129 @@ function pickOX() { // 카드를 두개 골랐을경우 모든 카드의 포인�
     });
 }
 
+function selectable() { //유저가 음소가 다른 두개를 골라서, 두개다 다름을 인지하였을 경우 다시 선택
+    $('.card').css({
+        pointerEvents: "auto"
+    });
+    fliped = 0;
+    droppedCardBlock();
+}
+
+function updateCounterStatus($event_counter, new_count) { // userlife, userscore, comscore를 상시 반영
+    $("span.count", $event_counter).text(new_count);
+    if ((dropNum.length === 8 && gameSetting === 6) || (dropNum.length === 16 && gameSetting === 8)) {
+        endTrigger(gameSetting);
+    }
+}
+
+function lifeZero() { // 유저의 턴이 끝났을 경우 값들을 초기화 후 포인터 이벤트를 막음
+    //Alert(유저의 차례가 끝이났어요!)
+    if ((gameSetting === 6 && dropNum.length === 8) || (gameSetting === 8 && dropNum.length === 16)) {
+        return;
+    }
+    userLife = 0;
+    fliped = 0;
+    updateCounterStatus($userLife, userLife);
+    failstack = 0;
+    $('.card').css({
+        pointerEvents: "none"
+    });
+    setTimeout(function () {
+        comTurn();
+    }, 2000);
+}
+
+function findComNum() { //4X4 인경우와 3X3인경우 컴퓨터의 랜덤값을 반환하기 위해 만들어진 함수
+    let n = 0;
+    if (gameSetting === 8) {
+        n = Math.floor(Math.random() * 16); // 0~15 사이의 랜덤한 수를 n 에다 대입
+        let on = dropNum.indexOf(n); // on = dropNum배열에 n의 값을 가진게 하나라도 있는경우 -1을 반환함
+        if (on === -1) {
+            dropNum.push(n);
+            return n;
+        } else if (on !== -1 || (n < 0 || n >= 16)) { // n이 0보다 작거나 16보다 큰경우 방지, dropnum에 n값이 있는경우 재귀하여 이 조건이 맞을때까지 반복함
+            return findComNum();
+        }
+    } else { //3X3인 경우
+        n = Math.floor(Math.random() * 9);
+        let on = dropNum.indexOf(n);
+        if (on === -1) {
+            dropNum.push(n);
+            return n;
+        } else if (on !== -1 || (n < 0 || n >= 9)) {
+            return findComNum();
+        }
+    }
+}
+
+function game33End() {
+    let lastCard;
+    for (let i = 0; i < 9; i++) {
+        if (dropNum.indexOf(i) === -1) {
+            lastCard = i;
+        }
+    }
+    dropNum.push(lastCard);
+    $('.card').eq(lastCard).flip(true);
+    playAudio(lastCard);
+    $('.card').css({
+        pointerEvents: "none"
+    });
+    console.log("Game Over");
+}
+
+function endTrigger(set) {
+    if (set === 6) {
+        if (dropNum.length === 8) {
+            console.log("3X3 Game End");
+            if (userScore > comScore) {
+                console.log("User Win");
+            } else if (userScore === comScore) {
+                console.log("Draw");
+            } else {
+                console.log("Com Win");
+            }
+            setTimeout(function () {
+                game33End();
+            }, 2000);
+        }
+    } else if (dropNum.length === 16) {
+        console.log("4X4 Game End");
+        if (userScore > comScore) {
+            console.log("User Win");
+        } else if (userScore === comScore) {
+            console.log("Draw");
+        } else {
+            console.log("Com Win");
+        }
+    }
+}
+
+function comOver() {
+    //Alert(컴퓨터의 차례가 끝나고, 이제 유저의 차례임을 알림)
+    if ((gameSetting === 6 && dropNum.length === 8) || (gameSetting === 8 && dropNum.length === 16))  {
+        return;
+    } else {
+        userLife = 2;
+        updateCounterStatus($userLife, userLife);
+    }
+
+    $('.card').css({
+        pointerEvents: "auto"
+    });
+    droppedCardBlock();
+}
+
+function dropOver(one, two) { //유저가 카드 두장을 음소에 맞게 드랍한 경우
+    dropNum.push(one);
+    dropNum.push(two);
+    droppedCardBlock();
+}
+
+function droppedCardBlock() { //턴을 종료할때, drop된 카드를 클릭하지 못하게 막기
+    for (let i = 0; i < dropNum.length; i++) {
+        $('.card').eq(dropNum[i]).css({
+            pointerEvents: "none"
+        });
+    }
+}

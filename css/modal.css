@@ -8,9 +8,13 @@
 .modalContent{
   width:800px; height:100%;
   background:#fff; border-radius:10px;
-  position:relative; top:0%; left:30%;
+  position:absolute; top:0%; left:40%;
   margin-top:0px; margin-left:-200px;
   text-align:center;
   box-sizing:border-box; padding:74px 0;
   line-height:23px; cursor:pointer;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
 }

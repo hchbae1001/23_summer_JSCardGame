@@ -14,6 +14,24 @@
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
 
     <style>
+        /* body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        } */
+        /* .userBoard,
+        .comBoard{
+            border-collapse: collapse;
+            background-image: url("img/wooden_deck.jpg");
+            background-size: cover;
+        } */
+        body {
+            /* background-image: url("img/wooden_deck.jpg"); */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+
         .modal{
             position:absolute;
             width: 100%; height: 100%;
@@ -121,6 +139,36 @@
             display: inline-table;
         }
 
+        footer {
+            width: 100%;
+            height: 90px;
+            bottom: 0px;
+            /* position: absolute; */
+            border-top: 1px solid #c4c4c4;
+            padding-top: 15px;
+            color: #808080;
+            font-size: 16px;
+            text-align: center; /* 가운데 정렬 스타일 추가 */
+        }
+
+        footer a {
+            display: inline-block;
+            margin: 0 20px 10px 20px;
+            color: #808080; font-size: 11px;
+        }
+
+        footer a:visited {
+            color: #808080;
+        }
+
+        footer p {
+            margin-top: 0; margin-bottom: 0;   
+        }
+
+        footer p span {
+            display: inline-block;
+            margin-left: 20px;
+        }
         /*
         #cards {
             text-align: center;
@@ -439,4 +487,18 @@
         </div>
     </div>
     <script src="scripts.js"></script>
-</body></html>
+</body>
+<footer>
+    <p>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </p>
+    <p>
+        <span>22110096 배현철</span>
+        <!-- <span>© 2023 Your Website. All rights reserved.</span> -->
+        <span>jQuery 를 이용한 동적 웹 카드뒤집기 게임</span>
+        <!-- <span>Terms of Service</span> -->
+    </p>
+</footer>
+</html>

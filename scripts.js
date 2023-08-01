@@ -51,12 +51,6 @@ function init() {
     let boxWidth = parseInt($('.card').css('width'));
     let imgWidth = parseInt($('.card img').css('width'));
     sizeDiff = (boxWidth - imgWidth) / 2;
-    $('#men').click(function(){
-        $('.modal').fadeIn();
-    });
-    $('.modalContent').click(function(){
-        $('.modal').fadeOut();
-    });
     $('.button').hide();
     $('.card').flip();
     $('.card').hide();

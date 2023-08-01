@@ -36,3 +36,9 @@ nav {
 .navbar__menu li a:hover {
   text-decoration: underline;
 }
+
+.body{
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

@@ -609,7 +609,8 @@ function game33End() {
     $('.card').css({
         pointerEvents: "none"
     });
-    console.log("Game Over");
+    alert("Game Over");
+    // console.log("Game Over");
 }
 
 function endTrigger(set) {
@@ -617,10 +618,13 @@ function endTrigger(set) {
         if (dropNum.length === 8) {
             console.log("3X3 Game End");
             if (userScore > comScore) {
+                alert("User Win");
                 console.log("User Win");
             } else if (userScore === comScore) {
+                alert("Draw");
                 console.log("Draw");
             } else {
+                alert("Com Win");
                 console.log("Com Win");
             }
             setTimeout(function () {
@@ -630,10 +634,13 @@ function endTrigger(set) {
     } else if (dropNum.length === 16) {
         console.log("4X4 Game End");
         if (userScore > comScore) {
+            alert("User Win");
             console.log("User Win");
         } else if (userScore === comScore) {
+            alert("Draw");
             console.log("Draw");
         } else {
+            alert("Com Win");
             console.log("Com Win");
         }
     }

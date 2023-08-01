@@ -1,0 +1,89 @@
+.game {
+  width: 540px;
+  height: 140px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: inline-block;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+
+.button {
+  width: 100px;
+  height: 50px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+td {
+  width: 120px;
+  height: 120px;
+}
+
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.cardTable {
+  margin: 20px; /* Add some space around the table */
+}
+
+.card {
+  width: 120px;
+  height: 120px;
+  border: 1px solid #ccc;
+  text-align: center;
+  background-color: #4CAF50;
+  cursor: pointer;
+  position: relative;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 18px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.card:hover {
+  background-color: #45a049;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+}
+
+.userCard,
+.comCard {
+  width: 120px;
+  height: 120px;
+  float: left;
+  border: 1px solid #ccc;
+  margin: -3px 5px 8px 3px;
+  background-color: #f0f0f0;
+}
+
+.lock {
+  pointer-events: none;
+}
+
+.menTable {
+  margin-left: 30px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: inline-table;
+}

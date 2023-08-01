@@ -14,169 +14,15 @@
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
 
     <style>
-        /* body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        } */
-        /* .userBoard,
-        .comBoard{
-            border-collapse: collapse;
-            background-image: url("img/wooden_deck.jpg");
-            background-size: cover;
-        } */
         body {
-            /* background-image: url("img/wooden_deck.jpg"); */
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
         }
-
-
-        .modal{
-            position:absolute;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8);
-            top: 0;left: 0;
-            display: none;
-        }
-        .modalContent{
-            width:800px; height:100%;
-            background:#fff; border-radius:10px;
-            position:relative; top:0%; left:30%;
-            margin-top:0px; margin-left:-200px;
-            text-align:center;
-            box-sizing:border-box; padding:74px 0;
-            line-height:23px; cursor:pointer;
-        }
-
-        .game {
-            width: 540px;
-            height: 140px;
-            border: 1px solid #ccc;
-            padding: 10px;
-            display: inline-block;
-            background-color: #fff;
-            margin-bottom: 10px;
-        }
-
-        .button {
-            width: 100px;
-            height: 50px;
-            padding: 10px;
-            font-size: 16px;
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            margin-right: 10px;
-        }
-
-        td {
-            width: 120px;
-            height: 120px;
-        }
-
-        .front,
-        .back {
-            width: 100%;
-            height: 100%;
-        }
-
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        .cardTable {
-            margin: 20px; /* Add some space around the table */
-        }
-
-        .card {
-            width: 120px;
-            height: 120px;
-            border: 1px solid #ccc;
-            text-align: center;
-            background-color: #4CAF50;
-            cursor: pointer;
-            position: relative;
-            border-radius: 8px;
-            color: #fff;
-            font-size: 18px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease;
-        }
-
-        .card:hover {
-            background-color: #45a049;
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        img {
-            width: 100px;
-            height: 100px;
-            margin-top: 10px;
-        }
-
-        .userCard,
-        .comCard {
-            width: 120px;
-            height: 120px;
-            float: left;
-            border: 1px solid #ccc;
-            margin: -3px 5px 8px 3px;
-            background-color: #f0f0f0;
-        }
-
-        .lock {
-            pointer-events: none;
-        }
-
-        .menTable {
-            margin-left: 30px;
-            margin-top: 100px;
-            margin-bottom: 100px;
-            display: inline-table;
-        }
-
-        footer {
-            width: 100%;
-            height: 90px;
-            bottom: 0px;
-            /* position: absolute; */
-            border-top: 1px solid #c4c4c4;
-            padding-top: 15px;
-            color: #808080;
-            font-size: 16px;
-            text-align: center; /* 가운데 정렬 스타일 추가 */
-        }
-
-        footer a {
-            display: inline-block;
-            margin: 0 20px 10px 20px;
-            color: #808080; font-size: 11px;
-        }
-
-        footer a:visited {
-            color: #808080;
-        }
-
-        footer p {
-            margin-top: 0; margin-bottom: 0;   
-        }
-
-        footer p span {
-            display: inline-block;
-            margin-left: 20px;
-        }
-        /*
-        #cards {
-            text-align: center;
-            vertical-align: middle;
-        }
-*/
     </style>
-
+    <link rel="stylesheet" type="text/css" href="css/nav.css">
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
 </head>
 
 
@@ -201,185 +47,19 @@
     다 끝나면 게임종료<br>
     Computer Side
     -->
-    User Side <button id="men">Show Tooltips</button>
-    <div id="user">
-        <!--ㅏ-->
-        <div class="game userBoard" style="height: 240px;">ㅏ
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
+
+    <nav>
+        <div class="navbar__logo">
+            <a href="index.html">Logo</a>
         </div>
-        <!--ㅗ-->
-        <div class="game userBoard" style="height: 240px;">ㅗ
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-        </div>
-    </div>
+        <ul class="navbar__menu">
+            <li><a href="index.html">Home</a></li>
+            <li id="men">GameRule</li>
+            <li><a href="game.html">GameStart</a></li>
+        </ul>
+    </nav>
+
     
-    <br>
-    <div id="lifeStatus"> User Life = <span class="count">2</span></div>
-    <div id="userScore"> User Score = <span class="count">0</span></div>
-    <div id="comScore"> Com Score = <span class="count">0</span></div>
-    <button id="33">3X3</button>
-    <button id="44">4X4</button>
-    <div>
-        <div style="display: inline-block;" id="cards">
-            <table border="1px" class="cardTable">
-                <tr>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                </tr>
-
-            </table>
-        </div>
-    </div>
-    <table>
-        <tr height : 30px>
-            <td>
-                <button class="button" id="oButton">O 버튼</button>
-
-
-            </td>
-            <td>
-                <button class="button" id="xButton">X 버튼</button>
-            </td>
-        </tr>
-    </table>
-    <div id="computer">
-        <!--ㅏ-->
-        <div class="game comBoard" style="height: 240px;">ㅏ
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-        </div>
-        <!--ㅗ-->
-        <div class="game comBoard" style="height: 240px;">ㅗ
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-        </div>
-    </div>
     <div class="modal">
 
         <div class="modalContent">
@@ -489,11 +169,11 @@
     <script src="scripts.js"></script>
 </body>
 <footer>
-    <p>
+    <!-- <p>
         <a href="#">Home</a>
         <a href="#">About</a>
         <a href="#">Contact</a>
-    </p>
+    </p> -->
     <p>
         <span>22110096 배현철</span>
         <!-- <span>© 2023 Your Website. All rights reserved.</span> -->
@@ -501,4 +181,14 @@
         <!-- <span>Terms of Service</span> -->
     </p>
 </footer>
+<script>
+    $(function(){
+        $('#men').click(function(){
+        $('.modal').fadeIn();
+    });
+    $('.modalContent').click(function(){
+        $('.modal').fadeOut();
+    });
+    });
+</script>
 </html>

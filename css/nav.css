@@ -1,0 +1,38 @@
+nav {
+  background-color: #4CAF50;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.navbar__logo {
+  flex-grow: 1;
+  font-size: 24px;
+}
+
+.navbar__logo a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar__menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+}
+
+.navbar__menu li {
+  color: #fff;
+  margin-left: 20px;
+}
+
+.navbar__menu li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar__menu li a:hover {
+  text-decoration: underline;
+}

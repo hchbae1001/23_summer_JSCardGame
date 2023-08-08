@@ -22,13 +22,13 @@
     </style>
     <link rel="stylesheet" type="text/css" href="css/nav.css">
     <link rel="stylesheet" type="text/css" href="css/modal.css">
-    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/game.css">
+    <link rel="stylesheet" type="text/css" href="css/footer_game.css">
 </head>
 
 
 
 <body>
-    
     <!--
     16개의 카드를 랜덤으로 배치함 - O<br>
     16개의 카드를 랜덤으로 배치함 - O<br>
@@ -51,16 +51,197 @@
 
     <nav>
         <div class="navbar__logo">
-            <a href="index.html">Logo</a>
+            <a href="index.html">CG</a>
         </div>
         <ul class="navbar__menu">
             <li><a href="index.html">Home</a></li>
             <li id="men">GameRule</li>
-            <li><a href="game.html">GameStart</a></li>
+            <li><a href="#">GameStart</a></li>
         </ul>
     </nav>
 
+    <div class="body">
+        User Side
+
+    <div id="user">
+        <!--ㅏ-->
+        <div class="game userBoard" style="height: 240px;">ㅏ
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+        </div>
+        <!--ㅗ-->
+        <div class="game userBoard" style="height: 240px;">ㅗ
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+            <div class="userCard"></div>
+        </div>
+    </div>
     
+    <br>
+    <div id="lifeStatus"> User Life = <span class="count">2</span></div>
+    <div id="userScore"> User Score = <span class="count">0</span></div>
+    <div id="comScore"> Com Score = <span class="count">0</span></div>
+    <button id="33">3X3</button>
+    <button id="44">4X4</button>
+    <div>
+        <div style="display: inline-block;" id="cards">
+            <table border="1px" class="cardTable">
+                <tr>
+                    <td class="card">
+                        <div class="front">앞면</div>
+                        <div class="back">
+                            <img src="" class="image">
+                        </div>
+                    </td>
+                    <td class="card">
+                        <div class="front">앞면</div>
+                        <div class="back">
+                            <img src="" class="image">
+                        </div>
+                    </td>
+                    <td class="card">
+                        <div class="front">앞면</div>
+                        <div class="back">
+                            <img src="" class="image">
+                        </div>
+                    </td>
+                    <td class="card">
+                        <div class="front">앞면</div>
+                        <div class="back">
+                            <img src="" class="image">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="card">
+                        <div class="front">앞면</div>
+                        <div class="back">
+                            <img src="" class="image">
+                        </div>
+                    </td>
+                    <td class="card">
+                        <div class="front">앞면</div>
+                        <div class="back">
+                            <img src="" class="image">
+                        </div>
+                    </td>
+                    <td class="card">
+                        <div class="front">앞면</div>
+                        <div class="back">
+                            <img src="" class="image">
+                        </div>
+                    </td>
+                    <td class="card">
+                        <div class="front">앞면</div>
+                        <div class="back">
+                            <img src="" class="image">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="card">
+                        <div class="front">앞면</div>
+                        <div class="back">
+                            <img src="" class="image">
+                        </div>
+                    </td>
+                    <td class="card">
+                        <div class="front">앞면</div>
+                        <div class="back">
+                            <img src="" class="image">
+                        </div>
+                    </td>
+                    <td class="card">
+                        <div class="front">앞면</div>
+                        <div class="back">
+                            <img src="" class="image">
+                        </div>
+                    </td>
+                    <td class="card">
+                        <div class="front">앞면</div>
+                        <div class="back">
+                            <img src="" class="image">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="card">
+                        <div class="front">앞면</div>
+                        <div class="back">
+                            <img src="" class="image">
+                        </div>
+                    </td>
+                    <td class="card">
+                        <div class="front">앞면</div>
+                        <div class="back">
+                            <img src="" class="image">
+                        </div>
+                    </td>
+                    <td class="card">
+                        <div class="front">앞면</div>
+                        <div class="back">
+                            <img src="" class="image">
+                        </div>
+                    </td>
+                    <td class="card">
+                        <div class="front">앞면</div>
+                        <div class="back">
+                            <img src="" class="image">
+                        </div>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+    <table>
+        <tr height : 30px>
+            <td>
+                <button class="button" id="oButton">O 버튼</button>
+            </td>
+            <td>
+                <button class="button" id="xButton">X 버튼</button>
+            </td>
+        </tr>
+    </table>
+    <div id="computer">
+        <!--ㅏ-->
+        <div class="game comBoard" style="height: 240px;">ㅏ
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+        </div>
+        <!--ㅗ-->
+        <div class="game comBoard" style="height: 240px;">ㅗ
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+            <div class="comCard"></div>
+        </div>
+    </div>
+    </div>
+    
+
     <div class="modal">
         <div class="modalContent">
             <table border="2px" width="600px">
@@ -166,11 +347,9 @@
             </table> -->
         </div>
     </div>
-    <div class="body">
-        
-    </div>
+    <script src="modal.js"></script>
+    <script src="scripts.js"></script>
 </body>
-<script src="modal.js"></script>
 <footer>
     <!-- <p>
         <a href="#">Home</a>

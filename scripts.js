@@ -61,7 +61,33 @@ function init() {
     $(".card img").draggable({
         disabled: true
     }); // card의 draggable 을 불가능으로 초기화시킴
-    gameSetting = 8;
+    let queryString = window.location.search.split('=')[1];
+    if(queryString === '33'){
+        $('.card').eq(3).remove();
+        $('.card').eq(3).remove();
+        $('.card').eq(7).remove();
+        $('.card').eq(11).remove();
+        $('.card').eq(11).remove();
+        $('.card').eq(10).remove();
+        $('.card').eq(9).remove();
+        //유저카드와 컴퓨터 카드 4개씩 삭제
+        for (let x = 15; x > 13; x--) {
+            $('.comCard').eq(x).remove();
+            $('.userCard').eq(x).remove();
+        }
+        for (let x = 0; x < 2; x++) {
+            $('.comCard').eq(x).remove();
+            $('.userCard').eq(x).remove();
+        }
+    
+        //gameboard의 가로를 줄여, 2행 3열로 정렬
+        $('.game').css({
+            width: "420px"
+        });
+        gameSetting = 6;
+    }else{
+        gameSetting = 8;
+    }
     comB = gameSetting;
     shuffleCard();
 };
@@ -486,46 +512,46 @@ function playAudio(num) { // 매개변수로 index번호를 받아, 해당하는
     audio.play();
 }
 
-// // 3X3  버튼
-// $('#33').one('click', function () { // 이 클릭 이벤트는 한번만 가능
-//     //카드 7개 삭제
-//     $('.card').eq(3).remove();
-//     $('.card').eq(3).remove();
-//     $('.card').eq(7).remove();
-//     $('.card').eq(11).remove();
-//     $('.card').eq(11).remove();
-//     $('.card').eq(10).remove();
-//     $('.card').eq(9).remove();
-//     //유저카드와 컴퓨터 카드 4개씩 삭제
-//     for (let x = 15; x > 13; x--) {
-//         $('.comCard').eq(x).remove();
-//         $('.userCard').eq(x).remove();
-//     }
-//     for (let x = 0; x < 2; x++) {
-//         $('.comCard').eq(x).remove();
-//         $('.userCard').eq(x).remove();
-//     }
+// 3X3  버튼
+$('#33').one('click', function () { // 이 클릭 이벤트는 한번만 가능
+    //카드 7개 삭제
+    $('.card').eq(3).remove();
+    $('.card').eq(3).remove();
+    $('.card').eq(7).remove();
+    $('.card').eq(11).remove();
+    $('.card').eq(11).remove();
+    $('.card').eq(10).remove();
+    $('.card').eq(9).remove();
+    //유저카드와 컴퓨터 카드 4개씩 삭제
+    for (let x = 15; x > 13; x--) {
+        $('.comCard').eq(x).remove();
+        $('.userCard').eq(x).remove();
+    }
+    for (let x = 0; x < 2; x++) {
+        $('.comCard').eq(x).remove();
+        $('.userCard').eq(x).remove();
+    }
 
-//     //gameboard의 가로를 줄여, 2행 3열로 정렬
-//     $('.game').css({
-//         width: "420px"
-//     });
-//     gameSetting = 6;
-//     comB = gameSetting;
-//     shuffleCard();
-//     $('.card').show();
-//     $('#33').remove();
-//     $('#44').remove();
-// });
+    //gameboard의 가로를 줄여, 2행 3열로 정렬
+    $('.game').css({
+        width: "420px"
+    });
+    gameSetting = 6;
+    comB = gameSetting;
+    shuffleCard();
+    $('.card').show();
+    $('#33').remove();
+    $('#44').remove();
+});
 // 4X4  버튼 (init -> 숨김)
-// $('#44').one('click', function () { // 이 클릭 이벤트는 한번만 가능함
-//     gameSetting = 8;
-//     comB = gameSetting;
-//     shuffleCard();
-//     $('.card').show();
-//     $('#33').remove();
-//     $('#44').remove();
-// });
+$('#44').one('click', function () { // 이 클릭 이벤트는 한번만 가능함
+    gameSetting = 8;
+    comB = gameSetting;
+    shuffleCard();
+    $('.card').show();
+    $('#33').remove();
+    $('#44').remove();
+});
 
 function pickOX() { // 카드를 두개 골랐을경우 모든 카드의 포인터이벤트를 막고, 선택하도록 만듦
     //Alert(카드를 두개 선택하였으니, 두 카드의 음소가 맞으면 O , 틀리면 X를 눌러주세요)

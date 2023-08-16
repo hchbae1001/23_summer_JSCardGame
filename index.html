@@ -22,13 +22,13 @@
     </style>
     <link rel="stylesheet" type="text/css" href="css/nav.css">
     <link rel="stylesheet" type="text/css" href="css/modal.css">
-    <link rel="stylesheet" type="text/css" href="css/game.css">
     <link rel="stylesheet" type="text/css" href="css/footer_game.css">
 </head>
 
 
 
 <body>
+    
     <!--
     16개의 카드를 랜덤으로 배치함 - O<br>
     16개의 카드를 랜덤으로 배치함 - O<br>
@@ -48,7 +48,6 @@
     다 끝나면 게임종료<br>
     Computer Side
     -->
-
     <nav>
         <div class="navbar__logo">
             <a href="index.html">CG</a>
@@ -56,196 +55,16 @@
         <ul class="navbar__menu">
             <li><a href="index.html">Home</a></li>
             <li id="men">GameRule</li>
-            <li><a href="#">GameStart</a></li>
+            <li><a href="game.html?mode=33">3X3ModeStart</a></li>
+            <li><a href="game.html?mode=44">4X4ModeStart</a></li>
         </ul>
     </nav>
 
-    <div class="body">
-        User Side
-
-    <div id="user">
-        <!--ㅏ-->
-        <div class="game userBoard" style="height: 240px;">ㅏ
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-        </div>
-        <!--ㅗ-->
-        <div class="game userBoard" style="height: 240px;">ㅗ
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-            <div class="userCard"></div>
-        </div>
-    </div>
     
-    <br>
-    <div id="lifeStatus"> User Life = <span class="count">2</span></div>
-    <div id="userScore"> User Score = <span class="count">0</span></div>
-    <div id="comScore"> Com Score = <span class="count">0</span></div>
-    <!-- <button id="33">3X3</button>
-    <button id="44">4X4</button> -->
-    <div>
-        <div style="display: inline-block;" id="cards">
-            <table border="1px" class="cardTable">
-                <tr>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                    <td class="card">
-                        <div class="front">앞면</div>
-                        <div class="back">
-                            <img src="" class="image">
-                        </div>
-                    </td>
-                </tr>
-
-            </table>
-        </div>
-    </div>
-    <table>
-        <tr height : 30px>
-            <td>
-                <button class="button" id="oButton">O 버튼</button>
-            </td>
-            <td>
-                <button class="button" id="xButton">X 버튼</button>
-            </td>
-        </tr>
-    </table>
-    <div id="computer">
-        <!--ㅏ-->
-        <div class="game comBoard" style="height: 240px;">ㅏ
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-        </div>
-        <!--ㅗ-->
-        <div class="game comBoard" style="height: 240px;">ㅗ
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-            <div class="comCard"></div>
-        </div>
-    </div>
-    </div>
-    
-
     <div class="modal">
         <div class="modalContent">
-            <table border="2px" width="600px">
-                <th align="center">카드 뒤집기게임 진행 메뉴얼</th>
+            <table border="2px" width="600px" align="center">
+                <th align="center">카드 뒤집기게임 진행 메뉴얼</th> 
                 <tr height="50px">
                     <td>
                         처음 시작시, 3X3 을 할지 4X4를 할지 선택. ( 한번 클릭시 두개다 사라지고 카드가 나옴 )<br>
@@ -290,66 +109,62 @@
                     </td>
                 </tr>
             </table>
-            <!-- <table border="2px" width="600px">
-                <th colspan="2" align="center">카드 뒤집기게임 음성 시나리오</th>
-                <tr height="50px">
-                    <td colspan="2" align="center">
-                        처음 시작 시, 3X3 을 할지 4X4를 할지 정하도록합니다.
-                        (단, 고르는 기회는 한번입니다.)
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center">
-                        유저<br>
-                        <hr><br>
-                        카드 두개를 클릭하면 OX 버튼을 고르라는 음성 송출 <br>
-                        음소가 같을경우 -> O 클릭 -> 음소가 맞음을 확인시켜주고,( 드래그하세요 음성 송출)<br>
-                        알맞게 드래그 한 경우 -> 다음 카드를 드래그 해주세요<br>
-                        맞지않게 드래그 한경우 -> 한번 더 해보세요<br>
-                        두번 틀린 경우 -> 드래그 한것은 (음소), 드랍 해야할 곳은 (음소) ->(lifeZero)<br>
-                        두 카드를 알맞게 배치한 경우, 잘했다고 칭찬 해 주고 -> (lifeZero)<br>
-                        음소가 같을경우 -> X 클릭 -> 음소가 같은것을 확인시켜주고 -> (lifeZero)<br>
-                        음소가 다를 경우 -> O 클릭 ->음소가 다른것을 확인시켜주고, 한번의 기회를 추가 부여<br>
-                        한번의 기회를 추가 부여했지만, 또다시 틀린 경우 -> (lifeZero)<br>
-                        음소가 다를 경우 -> X 클릭 == 음소가 다른것을 확인시켜주고, (lifeZero)<br><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center">
-                        컴퓨터<br>
-                        <hr>
-                        (lifeZero -> 두번째 =)lifeZero 함수 에 comTurn 이전에 컴퓨터 차례임을 알림<br>
-                        컴퓨터가 두개의 카드를 고름<br>
-                        두 카드의 음소가 같음 -> 컴퓨터가 맞췄음을 알림 -> (comOver)<br>
-                        두 카드의 음소가 다름 -> 컴퓨터의 턴이 끝났음을 알림 -> (comOver)<br>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center" width="50%">
-                        게임 종료 시 점수를 비교<br>
-                        유저 의 점수가 더 많을 경우<br>
-                        유저가 이겼음을 알림<br>
-                        컴퓨터 의 점수가 더 많을 경우<br>
-                        컴퓨터가 이겼음을 알림<br>
-                        둘의 점수가 같을 경우<br>
-    
-                    </td>
-                    <td align="center" width="50%">
-                        lifeZero<br>
-                        = 유저의 차례가 끝이났음을 알림<br>
-                        = 설정한 타이머가 끝난 후 , 이제 컴퓨터가 할 차례임을 알림<br><br>
-    
-                        comOver<br>
-                        =컴퓨터의 차례가 끝났음을 알림<br>
-                        =설정한 타이머가 끝난 후, 이제 유저의 차례임을 알림<br>
-                    </td>
-                </tr>
-            </table> -->
         </div>
     </div>
-    <script src="modal.js"></script>
-    <script src="scripts.js"></script>
+    <div class="body">
+        <table border="2px" width="600px">
+            <th align="center">CG(Card Game) 메뉴얼</th> 
+            <tr height="50px">
+                <td>
+                    <br>
+                    상단 메뉴에서 게임을 시작할 수 있습니다.<br>
+                    GameRule 을 클릭 시, 게임 진행 방법을 알 수 있습니다.<br>
+                    3X3 모드와 4X4 모드가 있습니다.<br>
+                    3X3 모드는 ㅏ 음소 4개, ㅗ음소3개를 랜덤으로 골라서 삭제 한 후, 카드 랜덤 배치합니다.<br>
+                    4X4 모드는 16개 카드를 랜덤으로 섞어서, 배치 한 후 카드를 배치합니다.<br>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td><br>
+                    처음으로, 유저의 차례가 시작<br>
+                    카드를 클릭시, 카드를 뒤집으며, 해당카드의 음성을 재생<br>
+                    두 개의 카드를 골랐을시, 다른 것을 클릭 할 수 없고, O X 버튼이 팝업되어서 선택<br><br>
+                    음소가 같고<br>
+                    O 선택 시, 카드의 drag 기능이 활성화됨 [ 선택된 카드 외 다른 카드는 잠김]<br>
+                    알맞게 배치된 경우, 해당 자리에 카드가 위치하게됨<br>
+                    자리에 이미 카드가 있는경우 -> 근처 빈자리 찾아서 자리잡음<br>
+                    맞지 않게 배치된 경우, 드래그 되었던 카드가 다시 제자리로 돌아감<br>
+                    두번 틀린 경우 두개의 카드가 본래자리로 돌아가서, 뒤집히고 유저 턴 종료<br>
+                    두 카드 다 알맞게 배치된 경우 -> 유저의 점수 +2 후 유저 턴 종료<br>
+                    X 선택 시, 카드를 뒤집고, 유저 턴 종료<br><br>
+                    음소가 다르고<br>
+                    O 선택 시, 카드를 뒤집고, 유저 턴 종료<br>
+                    X 선택 시, 카드를 뒤집고, userlife -1 후, 다시한번 플레이. userlife가 0이 될시 턴 종료<br><br>
+                </td>
+            </tr>
+            <tr>
+                <td><br>
+                    유저 턴 종료시, 2초뒤 컴퓨터 차례로 넘어감<br>
+                    드랍되지않은 카드중 랜덤한 카드 두장을 2초 간격으로 선택하여 카드를 뒤집고 음성을 읽어줌<br>
+                    선택된 두 카드의 음소가<br>
+                    같을 경우, 뒤집힌 카드의 음소와 알맞은 칸으로 카드들이 이동, 컴퓨터 점수+2 후<br>
+                    컴퓨터 턴 종료<br>
+                    다를 경우, 뒤집었던 카드를 다시 뒤집고, 컴퓨터 턴 종료<br><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    게임 종료 조건<br>
+                    3X3 -> 드랍된 카드가 8장이 되었을때<br>
+                    4X4 -> 드랍된 카드가 16장일 경우<br>
+                    유저와 컴퓨터의 점수를 비교하여 승패를 가림<br>
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>
+<script src="modal.js"></script>
 <footer>
     <!-- <p>
         <a href="#">Home</a>
